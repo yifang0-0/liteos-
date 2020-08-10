@@ -57,6 +57,12 @@ cortex：ARM公司在经典处理器ARM11以后的产品改用Cortex命名，并
 <li><a href="#api-4">API</a></li>
 </ul>
 </li>
+<li><a href="#Message-Queue">Message Queue</a>
+<ul>
+<li><a href="#%E7%BB%93%E6%9E%84%E5%AE%9A%E4%B9%89-2">结构定义</a></li>
+<li><a href="#api-5">API</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -593,4 +599,103 @@ uint32_t osSemaphoreGetCount	(	osSemaphoreId_t 	semaphore_id	)
 - osSemaphoreDelete	删除信号量
 ```c
 osStatus_t osSemaphoreDelete	(	osSemaphoreId_t 	semaphore_id	)	;
+```
+#### Message Queue
+线程间同时访问共享资源
+##### 结构定义
+|struct osSemaphoreAttr_t|||
+|--|--|--|
+const char *|	name|	displayed during debugging|
+uint32_t|	attr_bits	|必须初始化为0
+|void *	|cb_mem	|默认NULL 使用动态内存|
+uint32_t|	cb_size|	字节计数.默认为0，配合上个属性|
+void *	|mq_mem	|data的存储空间 默认NULL 使用动态内存
+uint32_t|	mq_size|字节计数.默认为0，配合上个属性
+
+##### API	
+
+
+利用互斥锁的进程同步
+- osMessageQueueNew	创建一个消息队列
+```c
+
+osMessageQueueId_t osMessageQueueNew	(	uint32_t 	msg_count,
+uint32_t 	msg_size,
+const osMessageQueueAttr_t * 	attr 
+)	
+```
+
+uint32_t 	msg_count 设置能存储消息的最大值(资源可以用的总数)
+uint32_t 	msg_size 会向上舍入到一个double even number保证32位的对齐
+- osMessageQueueGetName	获取一个消息队列名称
+```c
+const char * osMessageQueueGetName	(	osMessageQueueId_t 	mq_id	)	
+
+```
+
+- osMessageQueuePut	增加一个消息
+```c
+
+osStatus_t osMessageQueuePut	(	osMessageQueueId_t 	mq_id,
+const void * 	msg_ptr,
+uint8_t 	msg_prio,
+uint32_t 	timeout 
+)	
+```
+> msg_ptr	
+  指向缓冲区消息的指针
+	msg_prio
+  消息优先级
+  timeout
+> - osWaitForever  表示消息的存放等待时间无限制
+> - 0 消息放置失败就立即返回
+> - 其他时间
+
+**注意**如果timeout被设置成0,则该接口可以在中断控制程序中被调用
+- osSemaphoreGet	从队列中获取一个消息
+```c
+osStatus_t osMessageQueueGet	(	osMessageQueueId_t 	mq_id,
+void * 	msg_ptr,
+uint8_t * 	msg_prio,
+uint32_t 	timeout 
+)	
+
+```
+
+> [in]	mq_id	
+message queue ID obtained by osMessageQueueNew.
+[out]	msg_ptr	
+pointer to buffer for message to get from a queue.
+[out]	msg_prio	
+pointer to buffer for message priority or NULL.
+[in]	timeout	
+- osMessageQueueGetCapacity	获得消息队列的容量(能存放的消息总最大个数)
+```c
+uint32_t osMessageQueueGetCapacity	(	osMessageQueueId_t 	mq_id	)	
+
+```
+返回0表示error
+- osMessageQueueGetMsgSize	获得消息队列单个消息的最大容量
+```c
+uint32_t osMessageQueueGetMsgSize	(	osMessageQueueId_t 	mq_id	)	
+
+```
+返回0表示error
+- osMessageQueueGetCount	获得队列中消息数量
+```c
+
+uint32_t osMessageQueueGetCount	(	osMessageQueueId_t 	mq_id	)
+```
+返回0表示error
+- osMessageQueueGetSpace 获得消息队列的剩余可用容量
+```c
+uint32_t osMessageQueueGetSpace	(	osMessageQueueId_t 	mq_id	)	
+```
+- osMessageQueueReset	清空消息队列
+```c
+osStatus_t osMessageQueueReset	(	osMessageQueueId_t 	mq_id	)	
+```
+- osMessageQueueDelete	删除消息队列
+```c
+osStatus_t osMessageQueueDelete	(	osMessageQueueId_t 	mq_id	)
 ```
