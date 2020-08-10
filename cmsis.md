@@ -14,7 +14,7 @@ cortex：ARM公司在经典处理器ARM11以后的产品改用Cortex命名，并
 <ul>
 <li><a href="#data-structure">data structure</a></li>
 <li><a href="#eum-%E5%86%85%E6%A0%B8%E7%8A%B6%E6%80%81">eum 内核状态</a></li>
-<li><a href="#function">function</a></li>
+<li><a href="#api">API</a></li>
 </ul>
 </li>
 <li><a href="#%E7%BA%BF%E7%A8%8B%E7%AE%A1%E7%90%86-thread-managementhttpsarm-softwaregithubiocmsis_5rtos2htmlgroup__cmsis__rtos__threadmgmthtmldetails">线程管理 Thread Management</a>
@@ -34,7 +34,7 @@ cortex：ARM公司在经典处理器ARM11以后的产品改用Cortex命名，并
 <ul>
 <li><a href="#%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86">工作原理</a></li>
 <li><a href="#struct-oseventflagsattr_t">struct osEventFlagsAttr_t</a></li>
-<li><a href="#function-1">function</a></li>
+<li><a href="#api-1">API</a></li>
 </ul>
 </li>
 <li><a href="#generic-wait-functions">Generic Wait Functions</a></li>
@@ -42,19 +42,19 @@ cortex：ARM公司在经典处理器ARM11以后的产品改用Cortex命名，并
 <ul>
 <li><a href="#%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B">工作流程</a></li>
 <li><a href="#%E8%AE%A1%E6%97%B6%E5%99%A8%E7%9A%84%E7%BB%93%E6%9E%84-ostimerattr_t">计时器的结构 osTimerAttr_t</a></li>
-<li><a href="#function-2">function</a></li>
+<li><a href="#api-2">API</a></li>
 </ul>
 </li>
 <li><a href="#mutex-management">Mutex Management</a>
 <ul>
 <li><a href="#%E7%BB%93%E6%9E%84%E5%AE%9A%E4%B9%89">结构定义</a></li>
-<li><a href="#api">API</a></li>
+<li><a href="#api-3">API</a></li>
 </ul>
 </li>
 <li><a href="#semaphores">Semaphores</a>
 <ul>
 <li><a href="#%E7%BB%93%E6%9E%84%E5%AE%9A%E4%B9%89-1">结构定义</a></li>
-<li><a href="#api-1">API</a></li>
+<li><a href="#api-4">API</a></li>
 </ul>
 </li>
 </ul>
@@ -114,7 +114,7 @@ enum  	osKernelState_t {
   osKernelReserved = 0x7FFFFFFFU
 }
 ```
-##### function
+##### API
 **osKernelInitialize**需要第一个执行(除了osKernelGetInfo,osKernelGetState)
 
 ``` c 
@@ -334,7 +334,7 @@ uint32_t|	attr_bits	|Reserved for future use默认需要设为全0
 |void *	|cb_mem	|NULL 使用动态内存|
 uint32_t|	cb_size|	字节计数.默认为0，配合上个属性|
 
-##### function
+##### API
 用于同步线程
 - osEventFlagsNew
 ```c
@@ -433,7 +433,7 @@ uint32_t|	attr_bits	|Reserved for future use
 uint32_t|	cb_size|	字节计数.默认为0，配合上个属性|
 
 
-##### function
+##### API
 - osTimerNew
 ```c
 osTimerId_t osTimerNew(
