@@ -5,14 +5,44 @@
 <ul>
 <li><a href="#liteos">LITEOS</a>
 <ul>
+<li><a href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86">操作系统基础知识</a>
+<ul>
+<li><a href="#%E5%AE%9E%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%88%86%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">实时操作系统与分时操作系统</a></li>
+<li><a href="#%E5%86%85%E6%A0%B8%E7%BA%BF%E7%A8%8B%E4%B8%8E%E7%94%A8%E6%88%B7%E7%BA%BF%E7%A8%8B">内核线程与用户线程</a>
+<ul>
+<li><a href="#%E5%86%85%E6%A0%B8%E7%BA%BF%E7%A8%8B%E4%B8%8E%E7%94%A8%E6%88%B7%E7%BA%BF%E7%A8%8B%E5%AF%B9%E6%AF%94">内核线程与用户线程对比</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href="#%E4%BD%93%E7%B3%BB%E6%9E%B6%E6%9E%84">体系架构</a></li>
 <li><a href="#%E5%86%85%E6%A0%B8%E6%9E%B6%E6%9E%84">内核架构</a></li>
 <li><a href="#%E5%86%85%E6%A0%B8%E5%8A%9F%E8%83%BD">内核功能</a></li>
 <li><a href="#%E6%80%BB%E7%BB%93%E6%96%87%E6%A1%A3">总结文档</a>
 <ul>
+<li><a href="#%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B">工作流程</a></li>
+<li><a href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86">内存管理</a>
+<ul>
+<li><a href="#%E9%9D%99%E6%80%81%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86">静态内存管理</a>
+<ul>
+<li><a href="#%E5%88%9D%E5%A7%8B%E5%8C%96">初始化</a></li>
+<li><a href="#%E5%86%85%E5%AD%98%E7%94%B3%E8%AF%B7">内存申请</a></li>
+<li><a href="#%E5%86%85%E5%AD%98%E9%87%8A%E6%94%BE">内存释放</a></li>
+</ul>
+</li>
+<li><a href="#%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86">动态内存管理</a>
+<ul>
+<li><a href="#%E5%88%9D%E5%A7%8B%E5%8C%96-1">初始化</a></li>
+<li><a href="#%E5%86%85%E5%AD%98%E7%94%B3%E8%AF%B7-1">内存申请</a></li>
+<li><a href="#%E5%86%85%E5%AD%98%E9%87%8A%E6%94%BE-1">内存释放</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href="#task">Task</a>
 <ul>
 <li><a href="#%E7%AE%80%E4%BB%8B">简介</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F">实现方式</a></li>
 <li><a href="#%E7%8A%B6%E6%80%81">状态</a></li>
 <li><a href="#%E5%8A%9F%E8%83%BD">功能</a></li>
 <li><a href="#api">API</a></li>
@@ -36,7 +66,7 @@
 <ul>
 <li><a href="#%E4%BF%A1%E5%8F%B7%E9%87%8F%E8%AE%BE%E8%AE%A1">信号量设计</a>
 <ul>
-<li><a href="#%E5%88%9D%E5%A7%8B%E5%8C%96">初始化</a></li>
+<li><a href="#%E5%88%9D%E5%A7%8B%E5%8C%96-2">初始化</a></li>
 <li><a href="#%E4%BF%A1%E5%8F%B7%E9%87%8F%E5%88%9B%E5%BB%BA%E4%B8%8E%E5%88%A0%E9%99%A4">信号量创建与删除</a></li>
 </ul>
 </li>
@@ -49,7 +79,7 @@
 <li><a href="#%E4%BA%92%E6%96%A5%E9%94%81%E7%8A%B6%E6%80%81">互斥锁状态</a></li>
 <li><a href="#%E4%BA%92%E6%96%A5%E9%94%81%E8%AE%BE%E8%AE%A1">互斥锁设计</a>
 <ul>
-<li><a href="#%E5%88%9D%E5%A7%8B%E5%8C%96-1">初始化</a></li>
+<li><a href="#%E5%88%9D%E5%A7%8B%E5%8C%96-3">初始化</a></li>
 <li><a href="#%E4%BA%92%E6%96%A5%E9%94%81%E7%94%B3%E8%AF%B7">互斥锁申请</a></li>
 <li><a href="#%E4%BA%92%E6%96%A5%E9%94%81%E9%87%8A%E6%94%BE">互斥锁释放</a></li>
 </ul>
@@ -71,9 +101,35 @@
 </li>
 </ul>
 </li>
+<li><a href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-1">基础知识</a>
+<ul>
+<li><a href="#%E5%86%85%E6%A0%B8%E7%BA%BF%E7%A8%8B%E4%B8%8E%E7%94%A8%E6%88%B7%E7%BA%BF%E7%A8%8B-1">内核线程与用户线程</a></li>
 </ul>
 </li>
 </ul>
+</li>
+</ul>
+<h2 class="mume-header" id="%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86">操作系统基础知识</h2>
+
+<h3 class="mume-header" id="%E5%AE%9E%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%88%86%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">实时操作系统与分时操作系统</h3>
+
+<p>RTOS实时 以时间为参考，对收到的信号做出“及时”实时“的反应”，规定时间，具有可靠性。典型代表：单片机嵌入式：电梯的控制<br>
+分时 多用户系统。有时间片轮转，重交互性。典型代表Linux/GUN操作系统</p>
+<h3 class="mume-header" id="%E5%86%85%E6%A0%B8%E7%BA%BF%E7%A8%8B%E4%B8%8E%E7%94%A8%E6%88%B7%E7%BA%BF%E7%A8%8B">内核线程与用户线程</h3>
+
+<h4 class="mume-header" id="%E5%86%85%E6%A0%B8%E7%BA%BF%E7%A8%8B%E4%B8%8E%E7%94%A8%E6%88%B7%E7%BA%BF%E7%A8%8B%E5%AF%B9%E6%AF%94">内核线程与用户线程对比</h4>
+
+<p>相同点是：</p>
+<ul>
+<li>都由do_fork()创建，每个线程都有独立的task_struct和内核栈；</li>
+<li>都参与调度，内核线程也有优先级，会被调度器平等地换入换出</li>
+</ul>
+<p>不同之处在于：</p>
+<ul>
+<li>内核线程只工作在内核态中；而用户线程则既可以运行在内核态（-执行系统调用时），也可以运行在用户态；</li>
+<li>内核线程没有用户空间，所以对于一个内核线程来说，它的0<sub>3G的内存空间是空白的，它的current-&gt;mm是空的，与内核使用同一张页表；而用户线程则可以看到完整的0</sub>4G内存空间。</li>
+</ul>
+<p><a href="https://www.cnblogs.com/sky-heaven/p/8204614.html">参考</a></p>
 <h2 class="mume-header" id="%E4%BD%93%E7%B3%BB%E6%9E%B6%E6%9E%84">体系架构</h2>
 
 <h2 class="mume-header" id="%E5%86%85%E6%A0%B8%E6%9E%B6%E6%9E%84">内核架构</h2>
@@ -95,6 +151,79 @@
 </ul>
 <h2 class="mume-header" id="%E6%80%BB%E7%BB%93%E6%96%87%E6%A1%A3">总结文档</h2>
 
+<h3 class="mume-header" id="%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B">工作流程</h3>
+
+<p>參見<a href="">los_init</a></p>
+<blockquote>
+<p>舉例<br>
+OsExcRegister例外函数(exc)会执行<br>
+OsExcInit例外函数初始化会设OsExcRegister<br>
+OsTaskInit任务初始化函数会设OsExcRegister LOS_KernelInit内核初始化函数会调用OsExcInit(MAX_EXC_MEM_SIZE);<br>
+osKernelInitialize(void)会调用LOS_KernelInit<br>
+main()会调用osKernelInitialize(void)[最先运行的函数]</p>
+</blockquote>
+<h3 class="mume-header" id="%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86">内存管理</h3>
+
+<p>los可以使用静态内存管理:不需要占用cpu资源,在编译时完成一切内存分配<br>
+<a href="https://blog.csdn.net/Nocky/article/details/6056440?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param">如何选择两种管理方式</a></p>
+<h4 class="mume-header" id="%E9%9D%99%E6%80%81%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86">静态内存管理</h4>
+
+<h5 class="mume-header" id="%E5%88%9D%E5%A7%8B%E5%8C%96">初始化</h5>
+
+<p>传入参数:内存起始地址;总大小;每个块大小<br>
+分配的时候分为</p>
+<ul>
+<li>control block
+<ul>
+<li>(ptr*)free:指向第一个可用块</li>
+<li>(ptr*)end:指向内存末尾</li>
+<li>blksize:记录每个内存块大小</li>
+</ul>
+</li>
+<li>single bulk
+<ul>
+<li>(ptr*)next:指向下一个可用块</li>
+<li>content:可用空间</li>
+</ul>
+</li>
+</ul>
+<h5 class="mume-header" id="%E5%86%85%E5%AD%98%E7%94%B3%E8%AF%B7">内存申请</h5>
+
+<p>连续分配时,如果free!=NULL,当前存在空闲块,free=free-&gt;next</p>
+<h5 class="mume-header" id="%E5%86%85%E5%AD%98%E9%87%8A%E6%94%BE">内存释放</h5>
+
+<p>要释放的块的next指向free,free指向要释放的块</p>
+<h4 class="mume-header" id="%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86">动态内存管理</h4>
+
+<h5 class="mume-header" id="%E5%88%9D%E5%A7%8B%E5%8C%96-1">初始化</h5>
+
+<p>传入参数:动态内存起始地址,内存大小</p>
+<ul>
+<li>头部控制头
+<ul>
+<li>(ptr*)next:指向下一个控制头(初始化指向尾部控制头)</li>
+<li>len:初始化=0</li>
+</ul>
+</li>
+<li>中间可分配内存</li>
+<li>尾部控制头
+<ul>
+<li>(ptr*)next:指向NULL</li>
+<li>len:初始化=0</li>
+</ul>
+</li>
+</ul>
+<h5 class="mume-header" id="%E5%86%85%E5%AD%98%E7%94%B3%E8%AF%B7-1">内存申请</h5>
+
+<ul>
+<li>判断内存大小是否够分 可用内存为当前动态内存大小-所有控制块大小与所有控制块len区域标志的大小. 即 第一个控制头开始用<code>需要申请的内存大小NeededSize（包含控制头）</code>和 <code>HeadCtrl.next – HeadCtrl – HeadCtrl.len</code>的值作比较</li>
+</ul>
+<h5 class="mume-header" id="%E5%86%85%E5%AD%98%E9%87%8A%E6%94%BE-1">内存释放</h5>
+
+<ul>
+<li>头部内存释放:仅仅将len改为0</li>
+<li>中间内存释放:将其父指针指向HeadCtrl-&gt;next(原来位置的内容在分配的时候直接被覆盖)</li>
+</ul>
 <h3 class="mume-header" id="task">Task</h3>
 
 <h4 class="mume-header" id="%E7%AE%80%E4%BB%8B">简介</h4>
@@ -104,6 +233,39 @@
 <li>每一个任务都含有一个任务控制块(TCB)。TCB包含了任务上下文SP、任务状态、任务优先级、任务ID、任务名、任务栈大小等信息。</li>
 <li>任务切换：在<strong>M3内核</strong>中利用第14号PendSV异常进行任务切换。 与11号SVC异常必须在执行SVC指令后立即得到响应，如果得不到响应，会上访成硬fault不同，PendSV可以像普通的中断一样被悬起的。</li>
 </ul>
+<h4 class="mume-header" id="%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F">实现方式</h4>
+
+<p>流程:</p>
+<blockquote>
+<p>initTask:初始化所有队列:TCB队列(TASKID==表下标)<br>
+创建某个任务<br>
+初始化createTask的参数:taskInitParam<br>
+编写入口函数<br>
+任务名<br>
+栈大小...<br>
+CreateTask<br>
+检查传入参数正确性 OsTaskParamCheck<br>
+检查taskID正确性(指针地址是否无效)<br>
+获得一个新的TCB<br>
+初始化新task:OsNewTaskInit<br>
+初始状态设置为suspended<br>
+给taskID赋当前TCB的值<br>
+唤醒task LOS_TaskResume<br>
+关中断<br>
+判断是否是挂起状态<br>
+条件均满足<br>
+开中断<br>
+任务调度 LOS_Schedule //汇编程序<br>
+所有task入口 LITE_OS_SEC_TEXT_INIT VOID OsTaskEntry(UINT32 taskID)<br>
+确认TASKID<br>
+运行入口函数<br>
+删除任务<br>
+任务正在运行-状态改为unused-schedule<br>
+任务没有被使用-放入freelist-说明是可用的</p>
+</blockquote>
+<p>#define LOS_DL_LIST_ENTRY(item, type, member) <br>
+((type *)(VOID *)((CHAR *)(item) - LOS_OFF_SET_OF(type, member))) <br>
+#define LOS_OFF_SET_OF(type, member) ((UINT32)&amp;(((type *)0)-&gt;member))</p>
 <h4 class="mume-header" id="%E7%8A%B6%E6%80%81">状态</h4>
 
 <ul>
@@ -125,6 +287,72 @@
 </ul>
 <h4 class="mume-header" id="api">API</h4>
 
+<table>
+<thead>
+<tr>
+<th>功能分类</th>
+<th>接口名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>任务的创建和删除</td>
+<td>LOS_TaskCreate</td>
+<td>创建任务。</td>
+</tr>
+<tr>
+<td></td>
+<td>LOS_TaskDelete</td>
+<td>删除指定的任务。</td>
+</tr>
+<tr>
+<td>任务信息查询</td>
+<td>LOS_TaskSelf</td>
+<td>获取当前任务PID。</td>
+</tr>
+<tr>
+<td>任务状态控制</td>
+<td>LOS_TaskResume</td>
+<td>恢复挂起的任务。</td>
+</tr>
+<tr>
+<td></td>
+<td>LOS_TaskSuspend</td>
+<td>挂起指定的任务。</td>
+</tr>
+<tr>
+<td></td>
+<td>LOS_TaskDelay</td>
+<td>任务延时等待。</td>
+</tr>
+<tr>
+<td></td>
+<td>LOS_TaskYield</td>
+<td>显式放权，调整指定优先级的任务调度顺序。</td>
+</tr>
+<tr>
+<td>任务调度的控制</td>
+<td>LOS_TaskLock</td>
+<td>锁任务调</td>
+</tr>
+<tr>
+<td></td>
+<td>LOS_TaskUnlock</td>
+<td>解锁任务调度</td>
+</tr>
+<tr>
+<td>任务优先级的维护</td>
+<td>LOS_TaskPrioritySet</td>
+<td>设置指定任务的优先级。</td>
+</tr>
+<tr>
+<td></td>
+<td>LOS_TaskPriorityGet</td>
+<td>获取指定任务的优先级。</td>
+</tr>
+</tbody>
+</table>
 <h3 class="mume-header" id="timer">Timer</h3>
 
 <p>初始化：完成内存的分配、相关参数的设置、内部逻辑结构的建立、相关数据的初始化和为处理超时处理函数创建0号优先级任务。<br>
@@ -256,7 +484,7 @@ n&gt;1 Cn=Tn-C1-C2...-C(N-1)<br>
 </ul>
 <h4 class="mume-header" id="%E4%BF%A1%E5%8F%B7%E9%87%8F%E8%AE%BE%E8%AE%A1">信号量设计</h4>
 
-<h5 class="mume-header" id="%E5%88%9D%E5%A7%8B%E5%8C%96">初始化</h5>
+<h5 class="mume-header" id="%E5%88%9D%E5%A7%8B%E5%8C%96-2">初始化</h5>
 
 <ul>
 <li>信号量初始化为用户配置的N个信号量申请内存，并把所有的信号量初始化成未使用，并加入到未使用链表中供系统使用。</li>
@@ -333,7 +561,7 @@ n&gt;1 Cn=Tn-C1-C2...-C(N-1)<br>
 </ul>
 <h4 class="mume-header" id="%E4%BA%92%E6%96%A5%E9%94%81%E8%AE%BE%E8%AE%A1">互斥锁设计</h4>
 
-<h5 class="mume-header" id="%E5%88%9D%E5%A7%8B%E5%8C%96-1">初始化</h5>
+<h5 class="mume-header" id="%E5%88%9D%E5%A7%8B%E5%8C%96-3">初始化</h5>
 
 <ul>
 <li>
@@ -473,5 +701,8 @@ Mail在创建的同时已经分配的内存，用户可以通过Mail的内存分
 <li>任务等待内存分配<br>
 Mail在申请内存时，会因为没有内存而被挂起（在中断中不允许等待），发送时则不会引起任务等待；</li>
 </ul>
+<h2 class="mume-header" id="%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-1">基础知识</h2>
+
+<h3 class="mume-header" id="%E5%86%85%E6%A0%B8%E7%BA%BF%E7%A8%8B%E4%B8%8E%E7%94%A8%E6%88%B7%E7%BA%BF%E7%A8%8B-1">内核线程与用户线程</h3>
       </div>
     </body>
